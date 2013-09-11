@@ -149,14 +149,14 @@
 	<td height="22"><b><font color="#0C70EE"><?= $totalhits ?></font></b></td>
 	<td height="22"><b><font color="#0C70EE"><?= round(($totaleconomy/$totalsize)*100,3) ?> %</font></b></td></tr>
  </table><br>
- <table border="1" align="center"><tr><td align="left"<pre>
- <?php system("free -om"); ?>
- </pre></td></tr></table><br>
  <table border="1" align="center"><tr><td align="left"><pre>
+ <?php	system("free -om");?>
+ </pre></td></tr>
+ <tr><td><pre>
+ <?php	system("sensors | grep Core");//Precisa de lm-sensors instalado ?>
+ </pre></td></tr>
+ <tr><td align="left"><pre>
  <?php system("uptime"); ?></td>
- </pre></td></tr></table><br>
- <table border="1" align="center"><tr><td align="left"><pre>
- <?php system("cat /proc/cpuinfo | grep \"model name\\|processor\""); ?>
  </pre></td></tr></table>
 </body>
 </html>
